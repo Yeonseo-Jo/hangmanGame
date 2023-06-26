@@ -11,3 +11,12 @@
 body {
   font-family: "NeoDunggeunmoPro-Regular";
 }
+
+.answer__letter {
+  display: flex;
+  margin: 10px;
+}
+
+.answer__letter > li {
+  margin-left: 10px;
+}
