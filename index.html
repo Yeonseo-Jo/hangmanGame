@@ -7,7 +7,34 @@
     <title>Hangman-Game</title>
   </head>
   <body>
-    <h1>연서의 행맨 게임</h1>
+    <header class="header">
+      <h1 class="header__title">연서의 행맨 게임</h1>
+      <nav><button class="header__nav-resetBtn">Reset</button></nav>
+    </header>
+    <main>
+      <section class="answer">
+        <article class="answer__input">
+          <input type="text" autofocus />
+          <button>입력</button>
+        </article>
+        <article class="answer__letters">
+          <ul class="answer__letter"></ul>
+        </article>
+      </section>
+      <section class="fail">
+        <article class="fail__image"></article>
+        <aritcle class="fail__message">
+          <p>
+            <span>남은 목숨 : </span>
+            <span class="fail__message-life"></span>
+          </p>
+          <p>
+            <span>현재까지 입력한 문자 : </span>
+            <span class="fail__message-enter"></span>
+          </p>
+        </aritcle>
+      </section>
+    </main>
   </body>
   <script src="./script.js"></script>
 </html>
