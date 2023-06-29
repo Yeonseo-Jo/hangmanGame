@@ -12,8 +12,8 @@ let REMAIN_LIFE = 6;
 let COUNT_CORRECT = 0;
 
 const resetBtn = document.querySelector(".header__resetBtn");
-const answerUl = document.querySelector(".answer__letters");
-const answerInput = document.querySelector(".answer__input");
+const answerUl = document.querySelector(".answer__display-letters");
+const answerInput = document.querySelector(".answer__enter-input");
 const showTry = document.querySelector(".fail__message-try");
 const showLife = document.querySelector(".fail__message-life");
 const showLifeImage = document.querySelector(".fail__lifeImage");

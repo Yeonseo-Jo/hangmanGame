@@ -8,33 +8,32 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="header__title">연서의 행맨 게임</h1>
+      <h1 class="header__title">연서의 <span>&nbsp;행맨 게임</span></h1>
       <button class="header__resetBtn">Reset</button>
     </header>
     <main>
       <section class="answer">
-        <article>
+        <article class="answer__enter">
           <p>단어 입력 :</p>
-          <input class="answer__input" type="text" maxlength="1" placeholder="영문 소문자 하나만 입력해주세요" autofocus/>
-        </article>
+          <input class="answer__enter-input" type="text" maxlength="1" placeholder="영문 소문자 하나만 입력해주세요" autofocus/>
+        </article class="answer__display">
         <article>
-          <ul class="answer__letters"></ul>
+          <ul class="answer__display-letters"></ul>
         </article>
       </section>
       <section class="fail">
-        <article class="fail__image"></article>
+        <article class="fail__image">
+          <image class="fail__lifeImage" src="" alt="남은 생명6 이미지" />
+        </article>
         <aritcle class="fail__message">
           <div>
-            <image class="fail__lifeImage" src="" alt="남은 생명6 이미지" />
-          </div>
-          <p>
             <span>남은 목숨 : </span>
             <span class="fail__message-life"></span>
-          </p>
-          <p>
+          </div>
+          <div>
             <span> 현재까지 틀린 문자 : </span>
             <ul class="fail__message-try"></ul>
-          </p>
+          </div>
         </aritcle>
       </section>
     </main>

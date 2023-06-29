@@ -9,14 +9,114 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+
+  font-family: "NeoDunggeunmoPro-Regular";
+
+  background-color: whitesmoke;
+  color: black;
+}
+
+.header {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.header__title {
+  display: flex;
+  align-items: center;
+
+  font-size: 2rem;
+  line-height: 1rem;
+}
+
+.header__title > span {
+  color: palevioletred;
+}
+
+.header__resetBtn {
+  width: 5rem;
+  height: 3rem;
+
+  font-size: 1.2rem;
+  font-family: "NeoDunggeunmoPro-Regular";
+
+  border: none;
+  border-radius: 0.5rem;
+
+  background-color: rgb(226, 137, 167);
+  color: whitesmoke;
+}
+
+.answer__enter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.answer__enter > p {
+  font-size: 1.2rem;
+}
+
+.answer__enter-input {
+  width: 12rem;
+  height: 1.5rem;
+
+  font-size: 1.2rem;
   font-family: "NeoDunggeunmoPro-Regular";
 }
 
-.answer__letters {
-  display: flex;
-  margin: 10px;
+.answer__enter-input::placeholder {
+  font-size: 0.8rem;
+  font-family: "NeoDunggeunmoPro-Regular";
 }
 
-.answer__letters > li {
-  margin-left: 10px;
+.answer__display-letters {
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem 0;
+  gap: 1rem;
+
+  font-size: 2rem;
+  font-family: "NeoDunggeunmoPro-Regular";
+}
+
+.fail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.fail__lifeImage {
+  height: 18rem;
+  width: fit-content;
+}
+
+.fail__message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  font-size: 1.2rem;
+}
+
+.fail__message-life {
+  font-size: 1.4rem;
+
+  color: crimson;
+}
+
+.fail__message-try {
+  display: flex;
+  gap: 1rem;
+  padding-top: 0.5rem;
+
+  font-size: 1.4rem;
+
+  color: crimson;
 }
