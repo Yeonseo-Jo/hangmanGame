@@ -32,6 +32,8 @@ const showBlindedAnswer = () => {
 
 const checkInput = (e) => {
   let isAnswer = false;
+  //영문 소문자만 입력 되도록
+  e.target.value = e.target.value.replace(/[^a-z]/gi, "").toLowerCase();
   //input에 enter 입력 시 수행
   if (e.keyCode == 13) {
     // 중복 입력 검사
@@ -60,6 +62,7 @@ const checkInput = (e) => {
       showLifeImage.src = `./assets/Life_${REMAIN_LIFE}.png`;
       showLife.textContent = REMAIN_LIFE;
 
+      // 틀린 문자 보여주기
       let tryWord = document.createElement("li");
       tryWord.innerText = e.target.value;
       showTry.appendChild(tryWord);
