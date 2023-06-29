@@ -8,11 +8,11 @@ const chooseWord = () => {
 // 랜덤으로 골라진 단어
 const answerWords = chooseWord().split("");
 const tryList = [];
-let REMAIN_LIFE = 6;
+let REMAIN_LIFE = 7;
 let COUNT_CORRECT = 0;
 
 const answerUl = document.querySelector(".answer__letters");
-const asnwerInput = document.querySelector(".answer__input");
+const answerInput = document.querySelector(".answer__input");
 const trySpan = document.querySelector(".fail__message-try");
 const showLife = document.querySelector(".fail__message-life");
 showLife.textContent = REMAIN_LIFE;
@@ -77,9 +77,13 @@ const checkInput = (e) => {
   }
 };
 
-window.onload = () => {
+const showLifeImage = () => {};
+
+const startGame = () => {
   console.log(answerWords);
 
   showBlindedAnswer();
-  asnwerInput.addEventListener("keyup", (e) => checkInput(e));
+  answerInput.addEventListener("keyup", (e) => checkInput(e));
 };
+// window.onload = () => {};
+startGame();
