@@ -12,11 +12,11 @@ body {
   font-family: "NeoDunggeunmoPro-Regular";
 }
 
-.answer__letter {
+.answer__letters {
   display: flex;
   margin: 10px;
 }
 
-.answer__letter > li {
+.answer__letters > li {
   margin-left: 10px;
 }
