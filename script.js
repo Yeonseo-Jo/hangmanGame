@@ -8,14 +8,16 @@ const chooseWord = () => {
 // 랜덤으로 골라진 단어
 const answerWords = chooseWord().split("");
 const tryList = [];
-let REMAIN_LIFE = 7;
+let REMAIN_LIFE = 6;
 let COUNT_CORRECT = 0;
 
 const answerUl = document.querySelector(".answer__letters");
 const answerInput = document.querySelector(".answer__input");
 const trySpan = document.querySelector(".fail__message-try");
 const showLife = document.querySelector(".fail__message-life");
+const showLifeImage = document.querySelector(".fail__lifeImage");
 showLife.textContent = REMAIN_LIFE;
+showLifeImage.src = `./assets/Life_${REMAIN_LIFE}.png`;
 
 // 단어 수에 맞게 밑줄 나타내기
 const showBlindedAnswer = () => {
@@ -53,13 +55,16 @@ const checkInput = (e) => {
     if (!isAnswer) {
       console.log("틀");
       REMAIN_LIFE -= 1;
+      showLifeImage.src = `./assets/Life_${REMAIN_LIFE}.png`;
       showLife.textContent = REMAIN_LIFE;
     }
 
     // 남은 생명이 없으면 게임 종료
     if (REMAIN_LIFE === 0) {
-      alert("남은 생명이 없어요😭 다시 도전해주세요💦");
-      window.location.reload();
+      setTimeout(() => {
+        alert("남은 생명이 없어요😭 다시 도전해주세요💦");
+        window.location.reload();
+      }, [500]);
     }
 
     // 모두 맞추면 게임 성공, 단, 단어가 채워지고 성공임을 보여줘야 하므로 setTimeout 사용
@@ -76,8 +81,6 @@ const checkInput = (e) => {
     e.target.value = "";
   }
 };
-
-const showLifeImage = () => {};
 
 const startGame = () => {
   console.log(answerWords);
