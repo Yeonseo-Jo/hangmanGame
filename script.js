@@ -32,6 +32,7 @@ const showBlindedAnswer = () => {
 
 const checkInput = (e) => {
   let isAnswer = false;
+  //input에 enter 입력 시 수행
   if (e.keyCode == 13) {
     // 중복 입력 검사
     if (tryList.includes(e.target.value)) {
@@ -47,6 +48,7 @@ const checkInput = (e) => {
       if (word === e.target.value) {
         isAnswer = true;
         COUNT_CORRECT += 1;
+        // 중복 정답 처리를 위한 forEach문
         let targets = document.querySelectorAll(`.${word}`);
         targets.forEach((t) => (t.textContent = word));
       }
@@ -83,10 +85,14 @@ const checkInput = (e) => {
   }
 };
 
-const startGame = () => {
-  showBlindedAnswer();
+const listenEvent = () => {
   answerInput.addEventListener("keyup", (e) => checkInput(e));
   resetBtn.addEventListener("click", () => window.location.reload());
+};
+
+const startGame = () => {
+  showBlindedAnswer();
+  listenEvent();
 };
 
 startGame();
