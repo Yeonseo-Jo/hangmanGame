@@ -14,7 +14,7 @@ let COUNT_CORRECT = 0;
 const resetBtn = document.querySelector(".header__resetBtn");
 const answerUl = document.querySelector(".answer__letters");
 const answerInput = document.querySelector(".answer__input");
-const trySpan = document.querySelector(".fail__message-try");
+const showTry = document.querySelector(".fail__message-try");
 const showLife = document.querySelector(".fail__message-life");
 const showLifeImage = document.querySelector(".fail__lifeImage");
 showLife.textContent = REMAIN_LIFE;
@@ -54,12 +54,15 @@ const checkInput = (e) => {
       }
     });
 
-    // 정답이 틀렸을 경우 남은 생명 줄어들도록
+    // 정답이 틀렸을 경우 남은 생명 줄어들도록 (setTimeout으로 화면 그려지고 alert 뜨도록)
     if (!isAnswer) {
-      console.log("틀");
       REMAIN_LIFE -= 1;
       showLifeImage.src = `./assets/Life_${REMAIN_LIFE}.png`;
       showLife.textContent = REMAIN_LIFE;
+
+      let tryWord = document.createElement("li");
+      tryWord.innerText = e.target.value;
+      showTry.appendChild(tryWord);
     }
 
     // 남은 생명이 없으면 게임 종료
@@ -70,7 +73,7 @@ const checkInput = (e) => {
       }, [500]);
     }
 
-    // 모두 맞추면 게임 성공, 단, 단어가 채워지고 성공임을 보여줘야 하므로 setTimeout 사용
+    // 모두 맞추면 게임 성공, (setTimeout으로 화면 그려지고 alert 뜨도록)
     if (COUNT_CORRECT === answerWords.length) {
       setTimeout(() => {
         alert("🥳축하합니다! 게임 성공!🥳");
@@ -78,19 +81,19 @@ const checkInput = (e) => {
       }, [500]);
     }
 
-    console.log(COUNT_CORRECT, answerWords.length);
-
     // input 초기화
     e.target.value = "";
   }
 };
 
+//input과 reset 버튼 이벤트 캡슐화 함수
 const listenEvent = () => {
   answerInput.addEventListener("keyup", (e) => checkInput(e));
   resetBtn.addEventListener("click", () => window.location.reload());
 };
 
 const startGame = () => {
+  console.log(answerWords);
   showBlindedAnswer();
   listenEvent();
 };
