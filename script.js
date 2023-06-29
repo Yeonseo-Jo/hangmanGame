@@ -96,6 +96,7 @@ const listenEvent = () => {
 };
 
 const startGame = () => {
+  console.log(answerWords); //pr용 콘솔
   showBlindedAnswer();
   listenEvent();
 };
