@@ -11,6 +11,7 @@ const tryList = [];
 let REMAIN_LIFE = 6;
 let COUNT_CORRECT = 0;
 
+const resetBtn = document.querySelector(".header__resetBtn");
 const answerUl = document.querySelector(".answer__letters");
 const answerInput = document.querySelector(".answer__input");
 const trySpan = document.querySelector(".fail__message-try");
@@ -83,10 +84,9 @@ const checkInput = (e) => {
 };
 
 const startGame = () => {
-  console.log(answerWords);
-
   showBlindedAnswer();
   answerInput.addEventListener("keyup", (e) => checkInput(e));
+  resetBtn.addEventListener("click", () => window.location.reload());
 };
-// window.onload = () => {};
+
 startGame();
